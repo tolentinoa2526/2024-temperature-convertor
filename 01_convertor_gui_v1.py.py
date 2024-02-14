@@ -73,6 +73,26 @@ class Converter:
         self.to_history_button.grid(row=1, column=1, padx=5, pady=5)
 
 
+    def check_temp(min_value):
+        error = "Please enter a number that is more " \
+                "that=n {}".format(min_value)
+
+        try:
+            response = float(input("Choose a number: "))
+
+            if response < min_value:
+                print(error)
+            else:
+                return response
+
+        except ValueError:
+            print(error)
+
+    # check temperature is more than -459 and convert it
+    def to_celsius(self):
+
+        self.check_temp(-459)
+
 # main routine
 if __name__== "__main__":
     root =Tk()
